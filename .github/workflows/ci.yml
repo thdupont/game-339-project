@@ -20,14 +20,6 @@ jobs:
           dotnet-version: |
             9.0.x
 
-      - name: Cache NuGet packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.nuget/packages
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-nuget-
-
       - name: Restore
         working-directory: src/Solution
         run: dotnet restore JRPG.sln
@@ -38,7 +30,7 @@ jobs:
 
       - name: Test
         working-directory: src/Solution
-        run: dotnet test JRPG.sln --configuration Release --no-build --logger "trx;LogFileName=test_results.trx" --logger "console;verbosity=detailed"
+        run: dotnet test JRPG.sln --configuration Release --no-build --logger "trx;LogFileName=test_results.trx" --logger "console;verbosity=normal"
 
       - name: Show Results
         working-directory: src/Solution
