@@ -14,15 +14,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: List files
-        run: ls -R
-      - name: Check for solution file
-        run: ls -la src/Solution
-
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: | 
+          dotnet-version: |
             9.0.x
 
       - name: Cache NuGet packages
@@ -43,4 +38,4 @@ jobs:
 
       - name: Test
         working-directory: src/Solution
-        run: dotnet test JRPG.sln --configuration Release --no-build --logger "trx;LogFileName=test_results.trx"
+        run: dotnet test JRPG.sln --configuration Release --no-build --logger "console;trx;LogFileName=test_results.trx"
