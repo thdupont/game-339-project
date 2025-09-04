@@ -14,6 +14,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: List files
+        run: ls -R
+      - name: Check for solution file
+        run: ls -la src/Solution
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
