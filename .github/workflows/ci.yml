@@ -30,12 +30,12 @@ jobs:
 
       - name: Restore
         working-directory: src/Solution
-        run: dotnet restore src/Solution/JRPG.sln
+        run: dotnet restore JRPG.sln
 
       - name: Build
         working-directory: src/Solution
-        run: dotnet build src/Solution/JRPG.sln --configuration Release --no-restore
+        run: dotnet build JRPG.sln --configuration Release --no-restore
 
       - name: Test
         working-directory: src/Solution
-        run: dotnet test src/Solution/JRPG.sln --configuration Release --no-build --logger "trx;LogFileName=test_results.trx"
+        run: dotnet test JRPG.sln --configuration Release --no-build --logger "trx;LogFileName=test_results.trx"
