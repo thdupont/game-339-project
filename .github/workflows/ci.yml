@@ -39,3 +39,7 @@ jobs:
       - name: Test
         working-directory: src/Solution
         run: dotnet test JRPG.sln --configuration Release --no-build --logger "trx;LogFileName=test_results.trx" --logger "console;verbosity=detailed"
+
+      - name: Show Results
+        working-directory: src/Solution
+        run: cat JRPG.Services.Tests/TestResults/test_results.trx
