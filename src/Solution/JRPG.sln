@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JRPG.Services", "JRPG.Services\JRPG.Services.csproj", "{8BE71286-F3BE-4CEE-9B47-888429D70B81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JRPG.Services.Tests", "JRPG.Services.Tests\JRPG.Services.Tests.csproj", "{5F1B571A-5BDC-4273-AF5E-3C0D3BA83351}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JRPG.Console", "JRPG.Console\JRPG.Console.csproj", "{69D0EE86-9EDF-4AFD-B454-170050FF342E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BE71286-F3BE-4CEE-9B47-888429D70B81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BE71286-F3BE-4CEE-9B47-888429D70B81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BE71286-F3BE-4CEE-9B47-888429D70B81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BE71286-F3BE-4CEE-9B47-888429D70B81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F1B571A-5BDC-4273-AF5E-3C0D3BA83351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1B571A-5BDC-4273-AF5E-3C0D3BA83351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1B571A-5BDC-4273-AF5E-3C0D3BA83351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1B571A-5BDC-4273-AF5E-3C0D3BA83351}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69D0EE86-9EDF-4AFD-B454-170050FF342E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69D0EE86-9EDF-4AFD-B454-170050FF342E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69D0EE86-9EDF-4AFD-B454-170050FF342E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69D0EE86-9EDF-4AFD-B454-170050FF342E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
