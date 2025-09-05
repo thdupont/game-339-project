@@ -7,6 +7,7 @@ using NUnit.Framework;
 namespace JRPG.Services.Tests
 {
     [TestFixture]
+    [SuppressMessage("Assertion", "NUnit2005:Consider using Assert.That(actual, Is.EqualTo(expected)) instead of ClassicAssert.AreEqual(expected, actual)")]
     public class CombatTests
     {
         private static CombatTestArena MakeArena()
@@ -26,6 +27,15 @@ namespace JRPG.Services.Tests
             return new CombatTestArena(ctx, hero, mage, slimeA, slimeB, log);
         }
 
+        [Test]
+        public void DemoTest()
+        {
+            var i = 10;
+            Assert.AreEqual(10 / 2, 5);
+            var isEqualFive = 10 / 2 == 5;
+            Assert.IsTrue(isEqualFive);
+        }
+        
         [Test]
         public void Firestorm_HitsAllEnemies_ConsumesMP()
         {
