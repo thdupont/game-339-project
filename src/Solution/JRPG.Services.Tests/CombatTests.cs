@@ -33,7 +33,7 @@ namespace JRPG.Services.Tests
             var i = 10;
             Assert.AreEqual(10 / 2, 5);
             var isEqualFive = 10 / 2 == 5;
-            Assert.IsTrue(isEqualFive);
+            Assert.IsTrue(isEqualFive); // SHOULD BE TRUE!
         }
         
         [Test]
