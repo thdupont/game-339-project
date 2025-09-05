@@ -24,6 +24,10 @@ jobs:
         working-directory: src/Solution
         run: dotnet restore JRPG.sln
 
+      - name: Echo
+        working-directory: src/Solution
+        run: echo "hello world"
+
       - name: Build
         working-directory: src/Solution
         run: dotnet build JRPG.sln --configuration Release --no-restore
