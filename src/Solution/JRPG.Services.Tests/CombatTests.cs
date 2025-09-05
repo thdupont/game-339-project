@@ -21,7 +21,7 @@ namespace JRPG.Services.Tests
 
             mage.Abilities.Add(new FirestormAbility());
             hero.Abilities.Add(new MendAbility());
-
+            
             ctx.Participants.AddRange(new[] { hero, mage, slimeA, slimeB });
             return new CombatTestArena(ctx, hero, mage, slimeA, slimeB, log);
         }
@@ -44,6 +44,7 @@ namespace JRPG.Services.Tests
             // Some logs should exist
             Assert.IsTrue(arena.Log.Entries.Any(e => e.text.Contains("casts Firestorm")));
             Assert.IsTrue(arena.Log.Entries.Any(e => e.text.Contains("takes")));
+            Assert.Fail("WHY????");
         }
 
         [Test]
