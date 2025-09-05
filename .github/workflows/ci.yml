@@ -30,7 +30,7 @@ jobs:
 
       - name: Test
         working-directory: src/Solution
-        run: dotnet test JRPG.sln --configuration Release --no-build --logger "trx;LogFileName=test_results.trx" --logger "console;verbosity=normal"
+        run: dotnet test JRPG.sln --configuration Release --no-build --logger "trx;LogFileName=test_results.trx"
 
       - name: Show Results
         working-directory: src/Solution
