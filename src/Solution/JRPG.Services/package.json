@@ -1,0 +1,22 @@
+{
+  "name": "com.thdupont.game-339",
+  "version": "1.0.0",
+  "displayName": "GAME 339",
+  "description": "JRPG Services for GAME 339",
+  "unity": "6000.2",
+  "documentationUrl": "https://github.com/thdupont/game-339-project/blob/main/README.md",
+  "changelogUrl": "https://github.com/thdupont/game-339-project",
+  "licensesUrl": "https://github.com/thdupont/game-339-project/blob/main/LICENSE",
+  "dependencies": {
+ },
+ "keywords": [
+    "thdupont",
+    "game-339",
+    "jrpg"
+  ],
+  "author": {
+    "name": "thdupont",
+    "email": "red.shirt083@passinbox.com",
+    "url": "https://github.com/thdupont"
+  }
+}

@@ -57,6 +57,7 @@ namespace Observable.Runtime
         private void AddAndCall(Action action)
         {
             _event += action;
+            PreviousValue ??= _value;
             action?.Invoke();
         }
 

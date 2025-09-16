@@ -11,8 +11,12 @@ namespace JRPG.Services
 
         // Core stats
         public int MaxHP { get; private set; }
-        public int HP     { get; private set; }
-        public int MaxMP  { get; private set; }
+
+        private int _hp;
+        public int HP { get => _hp; private set { _hp = value; HpChangeEvent?.Invoke(value); } }
+        public event Action<int> HpChangeEvent;
+
+        public int MaxMP { get; private set; }
         public int MP     { get; private set; }
 
         // Offensive / defensive stats
