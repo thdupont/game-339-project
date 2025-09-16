@@ -1,0 +1,17 @@
+{
+    "name": "Binding.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7000881a5b7354cb69ec29e182be24b3",
+        "GUID:0766fcceee2334038b1631336f6d66ee"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
