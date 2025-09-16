@@ -20,4 +20,9 @@ public class BattleViewModelBindingTarget : ScriptableObject
 
         _viewModel.Value.AddParticipants(new JRPGCharacter(name, 35, 17, 8, 3, 4, 2));
     }
+
+    public void AttackSelectedTarget()
+    {
+        _viewModel.Value.AttackSelectedTarget();
+    }
 }
