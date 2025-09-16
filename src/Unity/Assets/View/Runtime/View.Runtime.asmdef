@@ -1,0 +1,17 @@
+{
+    "name": "View.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:1f2f6ff2c3e1a4c7486ea325f93383b4",
+        "GUID:7000881a5b7354cb69ec29e182be24b3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
