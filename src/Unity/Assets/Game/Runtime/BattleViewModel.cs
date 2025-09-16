@@ -15,16 +15,45 @@ namespace Game.Runtime
 
         public Property<List<JrpgCharacterViewModel>> Participants = new(new List<JrpgCharacterViewModel>());
 
+        public Property<JrpgCharacterViewModel> SelectedTarget = new();
+
         public BattleViewModel()
         {
             _model = new BattleContext(this);
+
+            Participants.ChangeEvent += OnParticipantsChange;
         }
 
         public void AddParticipants(params JRPGCharacter[] characters)
         {
             var list = Participants.Value.ToList();
-            list.AddRange(characters.Select(it => new JrpgCharacterViewModel(it)));
+            list.AddRange(characters.Select(it => new JrpgCharacterViewModel(this, it)));
             Participants.SetValue(list);
+
+            _model.Participants.Clear();
+            _model.Participants.AddRange(characters);
+        }
+
+        public void SelectTarget(JrpgCharacterViewModel target)
+        {
+            SelectedTarget.SetValue(target);
+        }
+
+        public void AttackSelectedTarget()
+        {
+            if (SelectedTarget.Value == null)
+            {
+                Debug.LogWarning($"{nameof(BattleViewModel)}|{nameof(AttackSelectedTarget)}|target is null");
+                return;
+            }
+
+            _model.Participants[0].AttackTarget(SelectedTarget.Value.Model);
+        }
+
+        private void OnParticipantsChange()
+        {
+            _model.Participants.Clear();
+            _model.Participants.AddRange(Participants.Value.Select(it => it.Model));
         }
 
         void ILog.Critical(string format, params object[] args)

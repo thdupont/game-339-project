@@ -2,29 +2,52 @@ using Binding.Runtime;
 using JRPG.Services;
 using Observable.Runtime;
 using Observable.Runtime.MutableProperty;
+using UnityEngine;
 
 namespace Game.Runtime
 {
     public class JrpgCharacterViewModel : IViewModel
     {
+        private BattleViewModel _battleViewModel;
         public Property<string> Name;
         public Property<int> Hp;
+        public Property<bool> Selected = new();
 
-        private readonly JRPGCharacter _model;
+        public JRPGCharacter Model { get; private set; }
 
-        public JrpgCharacterViewModel(JRPGCharacter model)
+        public JrpgCharacterViewModel(BattleViewModel battleViewModel, JRPGCharacter model)
         {
-            _model = model;
+            _battleViewModel = battleViewModel;
+            Model = model;
 
-            Name = new(_model.Name);
+            Name = new(Model.Name);
 
-            Hp = new(_model.HP);
-            _model.HpChangeEvent += OnHpChange;
+            Hp = new(Model.HP);
+            Model.HpChangeEvent += OnHpChange;
+
+            _battleViewModel.SelectedTarget.ChangeEvent += OnSelectedTargetChange;
+        }
+
+        public void ToggleSelected()
+        {
+            if (_battleViewModel.SelectedTarget.Value == this)
+            {
+                _battleViewModel.SelectTarget(null);
+            }
+            else
+            {
+                _battleViewModel.SelectTarget(this);
+            }
         }
 
         private void OnHpChange(int value)
         {
             Hp.SetValue(value);
+        }
+
+        private void OnSelectedTargetChange()
+        {
+            Selected.SetValue(_battleViewModel.SelectedTarget.Value == this);
         }
     }
 }
